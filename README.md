@@ -1,11 +1,5 @@
 # Swastik OS
 
-<div align="center">
-  <img src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" alt="Swastik OS Banner" width="100%" />
-</div>
-
-<br />
-
 **Swastik OS** is a personal portfolio website reimagined as a fully functional **Mac OS 9 (Platinum)** desktop environment. Built with modern web technologies, it offers a nostalgic yet interactive way to explore my skills, projects, and professional background.
 
 ## 🌟 Features
