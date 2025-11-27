@@ -197,15 +197,9 @@ const Window = ({
                             </button>
                         </div>
 
-                        {/* Title */}
+                        {/* Title - Removed as per request */}
                         <div className="flex-1 flex items-center justify-center text-center font-semibold text-gray-700 text-sm drop-shadow-[0_1px_0_rgba(255,255,255,0.8)] truncate px-2">
-                            {/* Proxy Icon */}
-                            {Icon && (
-                                <div className="mr-2 w-4 h-4 flex-shrink-0">
-                                    <Icon width="100%" height="100%" />
-                                </div>
-                            )}
-                            {title}
+                            {/* Content removed */}
                         </div>
 
                         {/* Spacer for centering */}
