@@ -5,7 +5,18 @@ import Window from './components/Window';
 import Dock from './components/Dock';
 import BootScreen from './components/BootScreen';
 import { AppId } from './types';
-import { HDIcon, BlueFolderIcon, ResumeIcon } from './components/MacIcons';
+import {
+    HDIcon,
+    BlueFolderIcon,
+    ResumeIcon,
+    FinderIcon,
+    AddressBookIcon,
+    CertificateIcon,
+    DictionaryIcon,
+    TerminalIcon,
+    SafariIcon,
+    MailIcon
+} from './components/MacIcons';
 import { AnimatePresence, motion } from 'framer-motion';
 
 // Apps
@@ -112,6 +123,19 @@ const App = () => {
         }
     }
 
+    const getAppIcon = (id) => {
+        switch (id) {
+            case AppId.ABOUT: return FinderIcon; // Or BlueFolderIcon
+            case AppId.EDUCATION: return DictionaryIcon;
+            case AppId.CERTIFICATES: return CertificateIcon;
+            case AppId.SKILLS: return TerminalIcon;
+            case AppId.PROJECTS: return BlueFolderIcon;
+            case AppId.CONTACT: return AddressBookIcon; // Or MailIcon
+            case AppId.RESUME: return ResumeIcon;
+            default: return FinderIcon;
+        }
+    }
+
     return (
         <>
             <AnimatePresence>
@@ -159,6 +183,7 @@ const App = () => {
                             key={window.id}
                             id={window.id}
                             title={getAppTitle(window.id)}
+                            icon={getAppIcon(window.id)}
                             isOpen={window.isOpen}
                             isActive={activeWindowId === window.id}
                             zIndex={window.zIndex}

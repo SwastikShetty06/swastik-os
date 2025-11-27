@@ -12,7 +12,8 @@ const Window = ({
     origin,
     onClose,
     onFocus,
-    onMinimize
+    onMinimize,
+    icon: Icon
 }) => {
     const [isMaximized, setIsMaximized] = useState(false);
     // Initial default, will be updated by useEffect on mount
@@ -197,7 +198,13 @@ const Window = ({
                         </div>
 
                         {/* Title */}
-                        <div className="flex-1 text-center font-semibold text-gray-700 text-sm drop-shadow-[0_1px_0_rgba(255,255,255,0.8)] truncate px-2">
+                        <div className="flex-1 flex items-center justify-center text-center font-semibold text-gray-700 text-sm drop-shadow-[0_1px_0_rgba(255,255,255,0.8)] truncate px-2">
+                            {/* Proxy Icon */}
+                            {Icon && (
+                                <div className="mr-2 w-4 h-4 flex-shrink-0">
+                                    <Icon width="100%" height="100%" />
+                                </div>
+                            )}
                             {title}
                         </div>
 
