@@ -5,5 +5,6 @@ export const AppId = {
     PROJECTS: 'projects',
     CERTIFICATES: 'certificates',
     CONTACT: 'contact',
-    RESUME: 'resume'
+    RESUME: 'resume',
+    GAME_RESUME: 'game_resume'
 };

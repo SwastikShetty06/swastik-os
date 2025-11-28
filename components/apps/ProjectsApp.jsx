@@ -92,15 +92,28 @@ const ProjectsApp = () => {
                                 )}
                             </div>
 
-                            <a
-                                href={project.html_url}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="flex items-center gap-1 text-xs font-bold text-white bg-gradient-to-b from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 border border-blue-700 px-3 py-1.5 rounded shadow-sm active:shadow-inner"
-                            >
-                                <span>Source</span>
-                                <ExternalLink size={12} />
-                            </a>
+                            <div className="flex gap-2">
+                                {project.homepage && (
+                                    <a
+                                        href={project.homepage}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="flex items-center gap-1 text-xs font-bold text-gray-700 bg-white hover:bg-gray-50 border border-gray-300 px-3 py-1.5 rounded shadow-sm active:shadow-inner transition-colors"
+                                    >
+                                        <span>Website</span>
+                                        <ExternalLink size={12} />
+                                    </a>
+                                )}
+                                <a
+                                    href={project.html_url}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="flex items-center gap-1 text-xs font-bold text-white bg-gradient-to-b from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 border border-blue-700 px-3 py-1.5 rounded shadow-sm active:shadow-inner"
+                                >
+                                    <span>Source</span>
+                                    <GitBranch size={12} />
+                                </a>
+                            </div>
                         </div>
                     </div>
                 ))}

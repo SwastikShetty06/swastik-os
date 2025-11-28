@@ -21,7 +21,35 @@ const Gradients = () => (
             <stop offset="0%" stopColor="#8B4513" />
             <stop offset="100%" stopColor="#5D2906" />
         </linearGradient>
+        <linearGradient id="gameboy" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stopColor="#a78bfa" />
+            <stop offset="100%" stopColor="#7c3aed" />
+        </linearGradient>
     </defs>
+);
+
+export const GameIcon = (props) => (
+    <svg viewBox="0 0 100 100" {...props}>
+        <Gradients />
+        <g filter="drop-shadow(0px 4px 4px rgba(0,0,0,0.4))">
+            {/* Body */}
+            <rect x="25" y="15" width="50" height="75" rx="5" fill="url(#gameboy)" />
+
+            {/* Screen Area */}
+            <rect x="30" y="25" width="40" height="30" rx="2" fill="#333" />
+            <rect x="32" y="27" width="36" height="26" fill="#9ca3af" /> {/* LCD */}
+
+            {/* D-Pad */}
+            <path d="M35,65 L40,65 L40,60 L45,60 L45,65 L50,65 L50,70 L45,70 L45,75 L40,75 L40,70 L35,70 Z" fill="#333" />
+
+            {/* Buttons */}
+            <circle cx="60" cy="68" r="3" fill="#ef4444" />
+            <circle cx="68" cy="64" r="3" fill="#ef4444" />
+
+            {/* Gloss */}
+            <path d="M25,15 L75,15 L75,40 L25,40 Z" fill="white" opacity="0.1" />
+        </g>
+    </svg>
 );
 
 export const FinderIcon = (props) => (

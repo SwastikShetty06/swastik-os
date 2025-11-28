@@ -1,7 +1,7 @@
 import React, { useRef, useState, useEffect } from 'react';
 import { motion, useMotionValue, useSpring, useTransform } from 'framer-motion';
 import { AppId } from '../types';
-import { FinderIcon, DictionaryIcon, TerminalIcon, SafariIcon, CertificateIcon, AddressBookIcon, ResumeIcon } from './MacIcons';
+import { FinderIcon, DictionaryIcon, TerminalIcon, SafariIcon, CertificateIcon, AddressBookIcon, ResumeIcon, GameIcon } from './MacIcons';
 
 // Updated app list with new Icons
 const apps = [
@@ -11,6 +11,7 @@ const apps = [
     { id: AppId.PROJECTS, label: 'Projects', icon: SafariIcon },
     { id: AppId.CERTIFICATES, label: 'Certificates', icon: CertificateIcon },
     { id: AppId.RESUME, label: 'Resume', icon: ResumeIcon },
+    { id: AppId.GAME_RESUME, label: 'Play Resume', icon: GameIcon },
     { id: AppId.CONTACT, label: 'Contact', icon: AddressBookIcon },
 ];
 

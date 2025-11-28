@@ -15,7 +15,8 @@ import {
     DictionaryIcon,
     TerminalIcon,
     SafariIcon,
-    MailIcon
+    MailIcon,
+    GameIcon
 } from './components/MacIcons';
 import { AnimatePresence, motion } from 'framer-motion';
 
@@ -27,6 +28,7 @@ import SkillsApp from './components/apps/SkillsApp';
 import ProjectsApp from './components/apps/ProjectsApp';
 import ContactApp from './components/apps/ContactApp';
 import ResumeApp from './components/apps/ResumeApp';
+import GameResumeApp from './components/apps/GameResumeApp';
 
 const App = () => {
     const [isBooting, setIsBooting] = useState(true);
@@ -39,6 +41,7 @@ const App = () => {
         [AppId.PROJECTS]: { id: AppId.PROJECTS, isOpen: false, zIndex: 1, position: { x: 260, y: 240 }, isMaximized: false },
         [AppId.CONTACT]: { id: AppId.CONTACT, isOpen: false, zIndex: 1, position: { x: 300, y: 280 }, isMaximized: false },
         [AppId.RESUME]: { id: AppId.RESUME, isOpen: false, zIndex: 1, position: { x: 340, y: 100 }, isMaximized: false },
+        [AppId.GAME_RESUME]: { id: AppId.GAME_RESUME, isOpen: false, zIndex: 1, position: { x: 380, y: 140 }, isMaximized: false },
     });
 
     const [activeWindowId, setActiveWindowId] = useState(AppId.ABOUT);
@@ -106,6 +109,7 @@ const App = () => {
             case AppId.PROJECTS: return <ProjectsApp />;
             case AppId.CONTACT: return <ContactApp />;
             case AppId.RESUME: return <ResumeApp />;
+            case AppId.GAME_RESUME: return <GameResumeApp />;
             default: return null;
         }
     };
@@ -119,6 +123,7 @@ const App = () => {
             case AppId.PROJECTS: return "Projects & Works";
             case AppId.CONTACT: return "Contact Info";
             case AppId.RESUME: return "Resume Preview";
+            case AppId.GAME_RESUME: return "Swastik's Adventure";
             default: return "App";
         }
     }
@@ -132,6 +137,7 @@ const App = () => {
             case AppId.PROJECTS: return BlueFolderIcon;
             case AppId.CONTACT: return AddressBookIcon; // Or MailIcon
             case AppId.RESUME: return ResumeIcon;
+            case AppId.GAME_RESUME: return GameIcon;
             default: return FinderIcon;
         }
     }
@@ -174,6 +180,11 @@ const App = () => {
                             label="Resume"
                             icon={ResumeIcon}
                             onClick={(rect) => openWindow(AppId.RESUME, rect)}
+                        />
+                        <DesktopIcon
+                            label="Play Resume"
+                            icon={GameIcon}
+                            onClick={(rect) => openWindow(AppId.GAME_RESUME, rect)}
                         />
                     </div>
 
